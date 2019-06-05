@@ -5,7 +5,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
-        <link rel="stylesheet" type="text/css" href="styles/styles_v6.css">
+        <link rel="stylesheet" type="text/css" href="styles/styles_v4.css">
     </head>
 
     <body>
@@ -49,7 +49,7 @@
         <div id="inset"></div>
         <div id="info">
             <a href="http://threejs.org" target="_blank">three.js</a> -
-            mrc format loader test by Deven Desai
+            mrc format loader test
         </div>
 
 
@@ -91,6 +91,14 @@
         var fourHeight = document.getElementById('containerZ').clientHeight;
         var dWidth =viewportWidthX;
         container1 = document.getElementById("container1");
+        function  perfectsquare(){
+            if(threeWidth>threeHeight){
+                threeWidth= threeHeight
+            }else{
+                threeHeight=threeWidth
+            };
+        };
+        perfectsquare();
         console.log(threeWidth);
         console.log(fourWidth);
         console.log(fourHeight);
@@ -412,7 +420,7 @@
             containerX.appendChild( renderer3.domElement );
             containerY.appendChild( renderer4.domElement );
             containerZ.appendChild( renderer5.domElement );
-
+    
 
 
             controls = new THREE.TrackballControls(camera, renderer.domElement);
@@ -454,6 +462,7 @@
             dWidth =viewportWidthX;
             windowWidth = window.innerWidth;
             windowHeight = window.innerHeight;
+            perfectsquare();
             camera.aspect = window.innerWidth / window.innerHeight;
             camera.updateProjectionMatrix();
             renderer.setSize(oneWidth, oneHeight);
